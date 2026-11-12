@@ -1,0 +1,32 @@
+node_modules/
+dist/
+release/
+staging-mac/
+win-unpacked/
+__pycache__/
+*.pyc
+
+# Sensitive files
+config.json
+deleted_devices.json
+devices_cache.json
+history.json
+
+# Logs
+*.log
+lt.log
+exe_debug.log
+
+# Build artifacts
+*.exe
+*.blockmap
+*.zip
+*.dmg
+builder-debug.yml
+
+# Vercel
+.vercel/
+
+# OS files
+.DS_Store
+Thumbs.db

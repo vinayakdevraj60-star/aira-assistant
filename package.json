@@ -1,0 +1,104 @@
+{
+  "name": "aira-assistant",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:exe": "npx electron-packager . \"AIRA Assistant\" --platform=win32 --arch=x64 --out=release --overwrite --ignore=\"^(dist|release)\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:portable": "electron-builder --win portable",
+    "dist:mac": "electron-builder --mac zip dmg",
+    "dist:all": "electron-builder -mw"
+  },
+  "build": {
+    "appId": "com.aira.assistant",
+    "productName": "AIRA Assistant",
+    "directories": {
+      "output": "dist"
+    },
+    "npmRebuild": false,
+    "files": [
+      "main.js",
+      "preload.js",
+      "config.json",
+      "history.json",
+      "study_packs.json",
+      "src/**/*"
+    ],
+    "extraResources": [
+      "stt_helper.py",
+      "tts_helper.py"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.productivity",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "identity": null,
+      "extendInfo": {
+        "NSCameraUsageDescription": "AIRA requires camera access for computer vision.",
+        "NSMicrophoneUsageDescription": "AIRA requires microphone access for real-time voice conversations.",
+        "NSScreenCaptureUsageDescription": "AIRA requires screen recording permission to view and assist with your desktop."
+      }
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AIRA Assistant",
+      "runAfterFinish": true
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "AIRA - 3D AI Vision & Voice Desktop Assistant",
+  "dependencies": {
+    "@google/genai": "^2.29.1",
+    "@google/generative-ai": "^0.24.1",
+    "docx": "^9.15.3",
+    "dotenv": "^18.0.7",
+    "pptxgenjs": "^4.0.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "electron": "^41.7.1",
+    "electron-builder": "^26.18.0"
+  }
+}

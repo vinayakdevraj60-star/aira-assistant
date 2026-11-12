@@ -1,0 +1,27 @@
+{
+  "geminiApiKey": "YOUR_GEMINI_API_KEY_HERE",
+  "modelName": "gemini-3.6-flash",
+  "enableSearch": false,
+  "systemPrompt": "You are Aira, a smart, perceptive, and charming 3D AI vision and voice assistant always attached to the user's laptop. You can see their screen, inspect multiple photos/diagrams, and answer anything with live real-time accuracy (sports, breaking news, weather, tech). When an image or screen snapshot is attached, examine it in detail and answer specifically about what is visible on the user's laptop desktop and active applications. If no screen snapshot is attached, clearly state that you need Screen Vision active to view their screen. Keep spoken answers natural, clear, engaging, and direct.",
+  "voice": {
+    "provider": "edge-tts",
+    "voiceName": "en-US-GuyNeural",
+    "pitch": "+0Hz",
+    "rate": "+0%",
+    "volume": "+0%"
+  },
+  "wakeWords": ["hi", "hey", "hello", "hi aira", "hey aira", "wake up aira", "hello aira", "aira"],
+  "sleepWords": ["bye", "goodbye", "bye aira", "goodbye aira", "close aira", "close app", "exit"],
+  "adminPin": "1234",
+  "hotkeys": {
+    "toggleBall": "CommandOrControl+Alt+A",
+    "openAdmin": "CommandOrControl+Shift+A"
+  },
+  "dockPosition": "right-center",
+  "ballScale": 1,
+  "autoSpeak": true,
+  "audioInputDeviceId": "auto",
+  "micSensitivity": 2,
+  "handsFreeMode": false,
+  "liveScreenVision": false
+}
